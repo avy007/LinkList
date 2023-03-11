@@ -51,7 +51,7 @@ Node head;
 		       }
 		        tempNode.next=newNode;    
 		   }
-		   //delete first
+    //delete first
 		   public void  deletefirst() {
 			   
 			   if(head==null) {
@@ -59,6 +59,26 @@ Node head;
 				   return;
 			   }	 
 			   head =head.next; 
+		   }
+		   
+   //delete last
+		   public void deletelast() {
+			   if(head==null) {
+				   System.out.println("list is empty");
+				   return;
+			   }  
+			   if(head.next==null) {
+				   head=null;
+				   return;
+			   }
+			    
+			   Node secondlast=head;
+			   Node last=head.next;
+			   while(last.next!=null) {
+				   last=last.next;
+				   secondlast=secondlast.next;
+			   }
+			   secondlast.next=null;
 		   }
 
 
@@ -69,6 +89,8 @@ Node head;
 		ll.addLast(70);
 		ll.printNode();
 		ll.deletefirst();
+		ll.printNode();
+		ll.deletelast();
 		ll.printNode();
 
 	}
