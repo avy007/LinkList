@@ -1,7 +1,6 @@
 package com.linklist;
 
 
-
 public class linklist {
 	
 	
@@ -18,6 +17,7 @@ Node head;
 			
 		}
 	}
+	// add first
 	  public void addFirst(Object data){
 
 		    Node newNode = new Node(data);
@@ -35,6 +35,7 @@ Node head;
 		   head = newNode;
 
 		   }
+	  //print
 		   public void printNode(){
 
 		    if(head==null){
@@ -57,13 +58,36 @@ Node head;
 		    System.out.println("null");
 
 		   }   
+		   // add last
+		   public void addLast(Object data) {
+
+		       Node newNode = new Node(data);
+
+		        if(head==null){
+
+		           System.out.println("Linked list is empty...");
+
+		           return;
+
+		           }
+
+		        Node tempNode = head;
+
+		        while(tempNode.next != null){
+
+		        tempNode = tempNode.next;
+
+		       }
+
+		        tempNode.next=newNode;    
+		   }
 
 
 	public static void main(String[] args) {
 		linklist ll=new linklist();
-		ll.addFirst(70);
 		ll.addFirst(30);
 		ll.addFirst(56);
+		ll.addLast(70);
 		ll.printNode();
 
 	}
